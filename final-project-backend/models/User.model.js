@@ -40,10 +40,8 @@ const userSchema = new Schema(
     country: {
       type: String,
       required: [true, 'Country is required.'],
-    }
-  }
-);
+    },
+    properties: [{ type: Schema.Types.ObjectId, ref: "Property" }],
+  });
 
-const User = model("User", userSchema);
-
-module.exports = User;
+  module.exports = model("User", userSchema);
