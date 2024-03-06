@@ -14,8 +14,14 @@ app.use("/properties", propertyRoutes);
 const listingRoutes = require("./routes/listings.routes");
 app.use("/listings", listingRoutes);
 
+const userRoutes = require("./routes/users.routes");
+app.use("/users", userRoutes);
+
 const indexRoutes = require("./routes/index.routes");
 app.use("/api", indexRoutes);
+
+const authRouter = require("./routes/auth.routes");
+app.use("/auth", authRouter);
 
 require("./error-handling")(app);
 
